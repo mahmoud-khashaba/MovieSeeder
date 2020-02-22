@@ -25,7 +25,9 @@
     "extra": {
     "laravel": {
         "providers": [
-            "le_54ba\\MovieSeeder\\MovieSeederServiceProvider"
+            "le_54ba\\MovieSeeder\\MovieSeederServiceProvider",
+			"Tmdb\\Laravel\\TmdbServiceProvider"
+
         ]
   	  }
 	},
