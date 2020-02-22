@@ -77,9 +77,9 @@ you can make the scheduler executed every interval though crontab in linux
 
 **Querying**
 
-hit localhost:8080/movies to list all movies 
-you can add options to the url like &category_id=18
-you can query by video=0 or 1 adult=(0 or 1)  
-contains "word or letter" in the title,overview,original_language 'title=word&overview=word'
-by release date equal or after the data given formatted as Y-m-d
-by popularity,rated &popular|desc or popular|asc
+hit localhost:8080/movies to list all movies ----
+you can add options to the url like &category_id=18 ----
+you can query by video=0 or 1 adult=(0 or 1) ----
+contains "word or letter" in the title,overview,original_language 'title=word&overview=word' ----
+by release date equal or after the data given formatted as Y-m-d ----
+by popularity,rated &popular|desc or popular|asc ----
