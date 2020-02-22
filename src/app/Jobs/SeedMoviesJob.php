@@ -33,13 +33,7 @@ class SeedMoviesJob implements ShouldQueue
     public function __construct()
     {
         $this->records_count = config('MovieSeeder.num_of_records');
-        $persisted = JobPersist::latest()->first();
-        if(null != $persisted)
-        {
-            $this->current_page = $persisted->current_page;
-            $this->previous_remaining = $persisted->previous_remaining;
-            $this->next_page_movies =unserialize($persisted->next_page_movies);    
-        }
+        
     }
 
     /**
@@ -49,7 +43,16 @@ class SeedMoviesJob implements ShouldQueue
      */
     public function handle(MovieRepository $movies)
     {
-      //previous_remaining is count of results in the next $next_page_movies (i have how much)
+
+        $persisted = JobPersist::latest()->first();
+        if(null != $persisted)
+        {
+            $this->current_page = $persisted->current_page;
+            $this->previous_remaining = $persisted->previous_remaining;
+            $this->next_page_movies =unserialize($persisted->next_page_movies);    
+        }
+        
+        //previous_remaining is count of results in the next $next_page_movies (i have how much)
         //remaining count is the results needed to make a full query count of the shared page 
         //between the two requests (i need how much)
         $this->movies = $movies;
