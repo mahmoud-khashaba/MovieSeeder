@@ -29,7 +29,7 @@ class MovieSeederServiceProvider extends ServiceProvider
         $this->loadMigration();
         $this->loadRoutesFrom(__DIR__.'/routes/api.php');
         $this->publishes([
-                    __DIR__ . '/docker/' => base_path(),
+                    __DIR__ . '/docker/' => base_path('/docker'),
                 ], 'docker');
         
  		$this->app->booted(function () {
