@@ -1,0 +1,36 @@
+{
+    "name": "php-tmdb/laravel",
+    "description": "Laravel Package for TMDB ( The Movie Database ) API. Provides easy access to the wtfzdotnet/php-tmdb-api library.",
+    "keywords": ["Laravel", "tmdb", "api", "php", "wrapper", "movie", "tv", "tv show", "tvdb"],
+    "authors": [
+        {
+            "name": "Mark Redeman",
+            "email": "markredeman@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+    },
+    "require-dev": {
+    },
+    "suggest": {
+        "doctrine/cache": "Required if you want to make use of caching features.",
+        "monolog/monolog": "Required if you want to make use of logging features."
+    },
+    "autoload": {
+        "psr-4": {
+            "Tmdb\\Laravel\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tmdb\\Laravel\\TmdbServiceProvider"
+            ],
+            "aliases": {
+                "Tmdb": "Tmdb\\Laravel\\Facades\\Tmdb"
+            }
+        }
+    }
+}
