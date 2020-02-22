@@ -22,7 +22,7 @@ this will create folders docker - database/migrations - config/MovieSeeder.php -
 php artisan vendor:publish --tag=le_54ba\MovieSeeder\MovieSeederServiceProvider
 php artisan vendor:publish --tag=Tmdb\Laravel\TmdbServiceProviderLaravel5
 ```
-if it didn't copy files do 
+if it didn't copy the files do 
 ```
 php artisan vendor:publish
 ```
