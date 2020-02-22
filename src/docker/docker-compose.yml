@@ -29,8 +29,8 @@ services:
       - "443:443"
     volumes:
       - ./:/var/www
-      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
-      - ./docker/nginx/ssl/:/etc/nginx/ssl/
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./nginx/ssl/:/etc/nginx/ssl/
     networks:
       - MovieSeeder-network
 
@@ -45,13 +45,12 @@ services:
     environment:
       MYSQL_DATABASE: movie_seeder
       MYSQL_USER: root
-      MYSQL_PASSWORD: root
       MYSQL_ROOT_PASSWORD: root
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
       - dbdata:/var/lib/mysql
-      - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
 
     networks:
       - MovieSeeder-network
@@ -63,7 +62,7 @@ services:
     container_name: php
     volumes:
       - ./:/var/www
-      - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
 
     ports:
       - "9000:9000"

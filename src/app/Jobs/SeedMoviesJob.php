@@ -75,6 +75,9 @@ class SeedMoviesJob implements ShouldQueue
 
                 $this->need = array_slice($repo, 0,$remaining_count);
                 $this->next_page_movies = array_slice($repo,$remaining_count);
+               }else
+               {
+                 $this->movies_to_seed =array_merge($this->movies_to_seed,$this->movies->getTopRatedRaw(['page' =>$i])['results']);
                }
             }else
             {
